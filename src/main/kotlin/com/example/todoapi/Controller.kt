@@ -9,11 +9,6 @@ class Controller(
 ) {
     private val log = LoggerFactory.getLogger(Controller::class.java)
 
-    init {
-        log.warn("You can access the swagger page on localhost:8080/swagger (probably)")
-    }
-
-
     @GetMapping("/todos/{id}")
     fun getById(
         @PathVariable id: Int
