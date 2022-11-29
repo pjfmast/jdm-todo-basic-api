@@ -20,14 +20,14 @@ class Controller(
     @GetMapping("/users/{userId}/todos")
     fun getByUserId(
         @PathVariable userId: Int
-    ) = repository.findAllByTodoId(userId)
+    ) = repository.findAllById(userId)
 
     @PutMapping("/todos/{id}")
     fun update(
         @PathVariable id: Int,
         @RequestBody todoItem: TodoItem
     ): TodoItem {
-        require(todoItem.todoId == id)
+        require(todoItem.id == id)
         return repository.saveAndFlush(todoItem)
     }
 
@@ -35,7 +35,7 @@ class Controller(
     fun create(
         @RequestBody todoItem: TodoItem
     ): TodoItem {
-        require(todoItem.todoId == null)
+        require(todoItem.id == null)
         return repository.saveAndFlush(todoItem)
     }
 

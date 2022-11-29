@@ -11,7 +11,7 @@ data class TodoItem(
 
     @Id
     @GeneratedValue
-    var todoId: Int?,
+    var id: Int?,
 
     val userId: Int,
 

@@ -4,5 +4,5 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface Repository : JpaRepository<TodoItem, Int> {
-    fun findAllByTodoId(id: Int): List<TodoItem>
+    fun findAllById(id: Int): List<TodoItem>
 }
